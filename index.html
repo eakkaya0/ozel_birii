@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>İyi ki Doğdun Rümeysa 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-top: 40px;
+      color: #ff4081;
+      animation: fadeInDown 2s ease-in-out;
+    }
+
+    .galeri {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .galeri img {
+      width: 250px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .galeri img:hover {
+      transform: scale(1.05);
+    }
+
+    .mesaj {
+      font-size: 1.2em;
+      margin-top: 40px;
+      padding: 0 20px;
+      color: #fff;
+      animation: fadeIn 3s ease-in;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .heart {
+      width: 20px;
+      height: 20px;
+      background: pink;
+      position: absolute;
+      top: -20px;
+      transform: rotate(45deg);
+      animation: fall linear;
+      z-index: 0;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: pink;
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      to {
+        top: 110%;
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hearts"></div>
+
+  <h1>İyi ki Doğdun Çiçeem 🎉</h1>
+
+  <div class="galeri">
+    <img src="rum.png" alt="Rümeysa 1">
+    <img src="rum2.png" alt="Rümeysa 2">
+  </div>
+
+  <p class="mesaj">
+    Gülüşünle hayatı güzelleştiren, ışığınla instamı süsleyen Rümeysa...<br>
+    Bugün senin günün! Hep böyle ışılda, hep gülümse 💫<br>
+    Seni tanımak en güzel rastlantıydı. Nice mutlu yaşlara! 🥳
+  </p>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = `${Math.random() * 100}%`;
+      heart.style.animationDuration = `${2 + Math.random() * 3}s`;
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
